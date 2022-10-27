@@ -1,7 +1,3 @@
-import argparse
-from scapy.all import *
-
-
 class Sniffer:
     def __init__(self, args):
         self.args = args
