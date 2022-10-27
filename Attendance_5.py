@@ -34,25 +34,7 @@ class EditRecord(tk.Frame):
 			b=int(b)
 		try:
 		
-			conn=sql.connect("attend")
-			cur=conn.cursor()
-			cur.execute("SELECT * FROM attable WHERE subid=?",(i,))
-			kk=cur.fetchone()
-			np=p
-			
-			nb=b
-				
-			cur.execute("UPDATE attable SET attended = ? WHERE subid= ?",(np,i))
-			cur.execute("UPDATE attable SET bunked = ? WHERE subid= ?",(nb,i))
-			conn.commit()
-			conn.close()
-			messagebox.showinfo("Alert!", "Updated")
-			
-		except:
-			messagebox.showinfo("Alert!", "There is no record")
 	
-	def showid(self,):
-		try:
 			conn=sql.connect("attend")
 			cur=conn.cursor()
 			cur.execute('SELECT * FROM attable')
